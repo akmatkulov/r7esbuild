@@ -15,6 +15,11 @@
       <%= render "layouts/header" %>
       <%= yield %>
       <%= render "layouts/footer" %>
+      <% if Rails.env.development? %>
+          <div class="alert alert-warning mt-1 fs-5 font-monospace fw-semibold mb-1" role="alert">
+              <%= debug(params) %>
+          </div>
+      <% end %>
     </div>
   </body>
 </html>
