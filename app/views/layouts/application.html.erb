@@ -13,6 +13,13 @@
   <body>
     <div class="container">
       <%= render "layouts/header" %>
+
+      <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type %> mt-3 fs-5 font-monospace fw-semibold mb-1" role="alert">
+              <%= message %>
+        </div>
+      <% end %>  
+
       <%= yield %>
       <%= render "layouts/footer" %>
       <% if Rails.env.development? %>

@@ -1,3 +1,34 @@
 <% provide(:title, "Sign up") %>
-<h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+
+  <h1 class="text-center">Sign up</h1>
+    <div class="row d-flex justify-content-center">
+    <%= form_with model: @user do |f| %>
+          <%= render "shared/error_messages" %>
+      
+          <div class="form-floating col-sm-4 mb-3 center-block">
+              <%= f.text_field :name, class: "form-control", id: "floatingInput", placeholder: "Name" %>
+              <%= f.label :name, for: "floatingInput" %>
+          </div>
+
+          <div class="form-floating col-sm-4 mb-3 center-block">
+              <%= f.text_field :email, class: "form-control", id: "floatingInput", placeholder: "Email" %>
+              <%= f.label :email, for: "floatingInput" %>
+          </div>
+
+          <div class="form-floating col-sm-4 mb-3 center-block">
+              <%= f.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+              <%= f.label :password, for: "floatingPassword" %>
+          </div>
+
+          <div class="form-floating col-sm-4 mb-3 center-block">
+              <%= f.password_field :password_confirmation, class: "form-control", id: "floatingPassword", placeholder: "Password Confirmation" %>
+              <%= f.label :password_confirmation, for: "floatingPassword" %>
+          </div>
+          
+         
+          <%= f.submit "Submit", class: "btn btn-primary btn-lg center-block"%>
+        
+          
+        
+    <% end %>
+
