@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
    # Return full title
    def full_title(page_title = '')
     base_title = "Ruby on Rails Tutorial Sample App"
