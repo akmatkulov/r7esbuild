@@ -7,6 +7,22 @@
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link active text-white fs-5 font-monospace" %></li>
       <li class="nav-item"><%= link_to "Help", help_path, class: "nav-link active text-white fs-5 font-monospace" %></li>
+      <% if logged_in? %>
+        <div class="btn-group">
+          <button type="button" class="btn dropdown-toggle text-white fs-5 font-monospace" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            Account
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><%= link_to "Profile", user_path(current_user), class: "dropdown-item" %></li>
+            <li><%= link_to "Settings", "#", class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= button_to "Log out", logout_path, method: :delete, class: "dropdown-item" %></li>
+          </ul>
+        </div>
+
+      <% else %>
+        <li class="nav-item"><%= link_to "Login", login_path, class: "nav-link active text-white fs-5 font-monospace" %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
