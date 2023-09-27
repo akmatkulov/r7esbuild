@@ -1,15 +1,16 @@
 <nav class="navbar navbar-expand-lg border rounded-3" style="background-color: #6610f2;">
   <div class="container-fluid">
-    <%= link_to 'SAMPLE APP', root_path, class: "navbar-brand text-white fw-bold fs-4 font-monospace" %>
+    <%= link_to image_tag("twitter.png", width: 60, height: 60, alt: "Rails logo"),
+                        root_path %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link active text-white fs-5 font-monospace" %></li>
-      <li class="nav-item"><%= link_to "Help", help_path, class: "nav-link active text-white fs-5 font-monospace" %></li>
+      <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link active text-white fs-5 fw-bold" %></li>
+      <li class="nav-item"><%= link_to "Help", help_path, class: "nav-link active text-white fs-5 fw-bold" %></li>
       <% if logged_in? %>
         <div class="btn-group">
-          <button type="button" class="btn dropdown-toggle text-white fs-5 font-monospace" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+          <button type="button" class="btn dropdown-toggle text-white fs-5 fw-bold" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
             Account
           </button>
           <ul class="dropdown-menu dropdown-menu-end">

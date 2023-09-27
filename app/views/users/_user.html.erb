@@ -1,7 +1,27 @@
-<li>
-    <%= gravatar_for(user) %>
-    <%= link_to user.name, user_path(user) %>
-    <% if current_user.admin? && !current_user?(user) %>
-        | <%= button_to "Delete", user, method: :delete %>
-    <% end %>
-</li>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="people-nearby">
+              <div class="nearby-user">
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <%= gravatar_for(user) %>
+                  </div>
+                  <div class="col-md-7 col-sm-7">
+                    <h5><%= link_to user.name, user_path(user) %></h5>
+                    <p>Software Engineer</p>
+                    <p class="text-muted">500m away</p>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <% if current_user.admin? && !current_user?(user) %>
+                         <%= button_to "Delete", user, method: :delete, class: "btn btn-primary" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+          </div>
+    	</div>
+	</div>
+</div>
+
